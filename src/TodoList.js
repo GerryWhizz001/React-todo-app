@@ -19,7 +19,7 @@ function TodoList() {
         onChange={(e) => setTask(e.target.value)}
         placeholder="Enter a task"
       />
-      <button onClick={addTask}>Add Task</button>
+      <button onClick={addTask}>Add Tasks</button>
 
       <ul>
         {tasks.map((t, index) => (
