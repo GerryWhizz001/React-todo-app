@@ -1,18 +1,20 @@
 import { initializeApp } from "firebase/app";
 import { getAuth, GoogleAuthProvider } from "firebase/auth";
 
+// Use environment variables for security
 const firebaseConfig = {
-  apiKey: "AIzaSyDamX0aIIiWY9jKEGEwDsry0Efn2gMtmss",
-  authDomain: "todoapp-a50d5.firebaseapp.com",
-  projectId: "todoapp-a50d5",
-  storageBucket: "todoapp-a50d5.firebasestorage.app",
-  messagingSenderId: "896463138953",
-  appId: "1:896463138953:web:69def4d22a528077b11658",
-  measurementId: "G-D9MSRM8SZW"
+  apiKey: import.meta.env.VITE_FIREBASE_API_KEY,
+  authDomain: import.meta.env.VITE_FIREBASE_AUTH_DOMAIN,
+  projectId: import.meta.env.VITE_FIREBASE_PROJECT_ID,
+  storageBucket: import.meta.env.VITE_FIREBASE_STORAGE_BUCKET,
+  messagingSenderId: import.meta.env.VITE_FIREBASE_MESSAGING_SENDER_ID,
+  appId: import.meta.env.VITE_FIREBASE_APP_ID,
+  measurementId: import.meta.env.VITE_FIREBASE_MEASUREMENT_ID,
 };
 
+// Initialize Firebase
 const app = initializeApp(firebaseConfig);
 const auth = getAuth(app);
 const provider = new GoogleAuthProvider();
 
-export { auth, provider};
+export { auth, provider };
